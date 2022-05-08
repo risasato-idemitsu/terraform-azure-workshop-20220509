@@ -48,7 +48,7 @@ resource "azurerm_linux_virtual_machine" "linux" {
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
-    sku       = "20.04-LTS"
+    sku       = "18.04-LTS"
     version   = "latest"
   }
 
@@ -56,7 +56,7 @@ resource "azurerm_linux_virtual_machine" "linux" {
 }
 
 resource "azurerm_virtual_machine_extension" "linux_custom_script" {
-  name                 = "extension-linux"
+  name                 = "extension-linux2"
   virtual_machine_id   = azurerm_linux_virtual_machine.linux.id
   publisher            = "Microsoft.Azure.Extensions"
   type                 = "CustomScript"
@@ -64,7 +64,7 @@ resource "azurerm_virtual_machine_extension" "linux_custom_script" {
 
   settings = <<SETTINGS
     {
-        "commandToExecute": "touch hello"
+        "commandToExecute": "touch /tmp/hello"
     }
 SETTINGS
 }
@@ -73,4 +73,3 @@ SETTINGS
 output "linux_pip" {
   value = azurerm_public_ip.linux_pip.ip_address
 }
-
