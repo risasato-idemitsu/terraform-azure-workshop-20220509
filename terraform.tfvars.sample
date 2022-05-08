@@ -1,0 +1,5 @@
+prefix              = "YOURNAME"
+resource_group_name = "リソースグループ名"
+vnet_name           = "VNet名"
+subnet_name         = "Subnet名"
+admin_password      = "VMのパスワード" #大文字小文字数字記号で9文字以上
