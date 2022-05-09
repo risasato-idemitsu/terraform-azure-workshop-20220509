@@ -8,10 +8,10 @@ module "windowsservers" {
   vm_os_offer                   = "WindowsServer"
   vm_os_sku                     = "2019-Datacenter"
   vm_size                       = "Standard_DS2_V2"
-  public_ip_dns       = ["${var.prefix}-vmips1","${var.prefix}-vmips2"]
+  public_ip_dns       = ["${var.prefix}-vmips1","${var.prefix}-vmips2","${var.prefix}-vmips3","${var.prefix}-vmips4"]
   vnet_subnet_id      = data.azurerm_subnet.main.id
-  nb_instances                  = 2
-  nb_public_ip                  = 2
+  nb_instances                  = 4
+  nb_public_ip                  = 4
   delete_os_disk_on_termination = true
   delete_data_disks_on_termination = true
 }
