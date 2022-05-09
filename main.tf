@@ -84,7 +84,7 @@ resource "azurerm_windows_virtual_machine" "windows" {
 }
 
 resource "azurerm_virtual_machine_extension" "windows_custom_script" {
-  name                 = "extension-linux"
+  name                 = "extension-windows"
   virtual_machine_id   = azurerm_windows_virtual_machine.windows.id
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
