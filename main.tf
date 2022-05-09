@@ -63,7 +63,7 @@ resource "azurerm_windows_virtual_machine" "windows" {
   name                  = "${var.prefix}-win"
   location              = data.azurerm_resource_group.main.location
   resource_group_name   = data.azurerm_resource_group.main.name
-  size                  = "Standard_F4"
+  size                  = "Standard_F2"
   admin_username        = var.admin_username
   admin_password        = var.admin_password
   network_interface_ids = [azurerm_network_interface.windows_nic.id]
